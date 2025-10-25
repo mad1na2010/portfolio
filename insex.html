@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One‑Page Portfolio | Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#000000;
+      --deep:#2C003E;
+      --white:#FFFFFF;
+      --gray:#C0C0C0;
+      --muted:#7a7a7a;
+      --glass: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.02);
+      --transition: 300ms cubic-bezier(.2,.9,.3,1);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Poppins',sans-serif;
+      background: linear-gradient(180deg,var(--black) 0%, #0b0011 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    /* ========== Header ========== */
+    header{
+      position:fixed;left:0;right:0;top:0;z-index:50;
+      background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(44,0,62,0.12));
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(255,255,255,0.04);
+    }
+    .nav-wrap{width:92%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .logo{font-weight:700;letter-spacing:1px;font-size:18px;color:var(--white)}
+    nav ul{display:flex;gap:22px;align-items:center;margin:0;padding:0}
+    nav li{list-style:none}
+    nav a{font-weight:500;color:var(--gray);padding:6px 10px;border-radius:6px;transition:var(--transition)}
+    nav a:hover{color:var(--white);background:var(--glass)}
+
+    .cta{padding:8px 14px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--gray);font-weight:600}
+    .cta:hover{background:var(--deep);color:var(--white);border-color:transparent;transform:translateY(-3px)}
+
+    /* Mobile menu */
+    .hamburger{display:none;gap:10px;align-items:center}
+    .ham-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
+
+    /* ========== Hero ========== */
+    .hero{height:88vh;min-height:560px;display:flex;align-items:center}
+    .video-bg{position:absolute;inset:0;overflow:hidden;z-index:-2}
+    .video-bg video{width:100%;height:100%;object-fit:cover;filter:brightness(0.45) contrast(1.05)}
+    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(44,0,62,0.25), rgba(0,0,0,0.6));z-index:-1}
+
+    .hero-inner{width:92%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
+    .intro h1{font-size:clamp(28px,5vw,56px);margin:0 0 14px;line-height:1.02}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--gray);font-weight:600;margin-bottom:12px}
+    .intro p{color:var(--muted);font-size:16px;margin-bottom:20px;max-width:60ch}
+    .hero-actions{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white);cursor:pointer;transition:var(--transition);font-weight:600}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(44,0,62,0.25)}
+    .btn.primary{background:linear-gradient(90deg,var(--deep),rgba(92,14,120,0.8));border:none}
+
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(6px)}
+    .hero-card img{width:100%;height:320px;object-fit:cover;border-radius:10px;margin-bottom:14px}
+    .hero-card h4{margin:0 0 6px}
+    .hero-card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* ========== Sections ========== */
+    section{padding:90px 0}
+    .container{width:92%;max-width:1200px;margin:0 auto}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center}
+    .about-img{width:360px;height:360px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,0.04)}
+    .about-img img{width:100%;height:100%;object-fit:cover}
+    .about-text h2{margin-top:0}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .skill{background:var(--card);padding:8px 12px;border-radius:999px;color:var(--gray);font-weight:600}
+
+    /* Portfolio */
+    .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;gap:20px}
+    .filters{display:flex;gap:12px;align-items:center}
+    .filter-btn{padding:8px 14px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--gray);cursor:pointer;font-weight:600;transition:var(--transition)}
+    .filter-btn.active{background:var(--deep);color:var(--white);border-color:transparent;box-shadow:0 10px 30px rgba(44,0,62,0.18)}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);transition:var(--transition);transform:translateY(0);opacity:1}
+    .card.hide{opacity:0;transform:scale(.96);pointer-events:none}
+    .card .thumb{height:210px;overflow:hidden}
+    .card img{width:100%;height:100%;object-fit:cover;transition:transform 400ms cubic-bezier(.2,.9,.3,1)}
+    .card:hover img{transform:scale(1.06)}
+    .card .info{padding:14px}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Contact */
+    .contact-grid{display:flex;gap:30px;align-items:flex-start}
+    .contact-card{flex:1;padding:18px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.03)}
+    .socials{display:flex;gap:12px;margin-top:12px}
+    .socials a{display:inline-flex;width:44px;height:44px;border-radius:10px;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(255,255,255,0.04)}
+
+    footer{padding:30px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity 600ms ease, transform 600ms ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero-inner{grid-template-columns:1fr 320px}
+      .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:1fr 300px}
+    }
+    @media (max-width:720px){
+      nav ul{display:none}
+      .hamburger{display:flex}
+      .hero-inner{grid-template-columns:1fr}
+      .hero-card{order:2}
+      .hero{min-height:600px}
+      .about-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:480px){
+      .portfolio-grid{grid-template-columns:1fr}
+      .hero{min-height:560px}
+      .about-img{width:100%;height:260px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <div class="logo">Your Name</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger">
+        <div class="ham-btn" id="menuBtn">☰</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="photo_2025-10-25_15-26-22.jpg" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-inner">
+        <div class="intro">
+          <div class="kicker">Frontend Developer</div>
+          <h1 class="reveal">Salom — Men <span style="color:var(--deep)">Madina</span>.<br> Men zamonaviy interaktiv saytlar yarataman.</h1>
+          <p class="reveal">Men HTML, CSS va JavaScript va yana bir qancha dasturlash tillar bilan chiroyli va funksional frontendlar yaratilishiga ixtisoslashganman. Portfolioimda veb-loyihalar, UI dizaynlar va animatsion ishlar mavjud.</p>
+          <div class="hero-actions reveal">
+            <a href="#portfolio" class="btn primary">Portfolio'ga o'tish</a>
+            <a href="#contact" class="btn">Bog'lanish</a>
+          </div>
+        </div>
+
+        <aside class="hero-card reveal">
+          <img src="Screenshot 2025-10-25 154253.png" alt="Portrait">
+          <h4>Madina Otanazarova</h4>
+          <p>Frontend Developer · UI/UX enthusiast</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <h2 class="reveal">About Me</h2>
+          <p class="reveal">Men dizayn va kodni birlashtirib, foydalanuvchi uchun qulay va estetik veb tajribalar yarataman. Loyihalarimda toza kod, responsiv dizayn va kichik animatsiyalar ustiga e'tibor qaratilgan.</p>
+          <div class="skills reveal">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React (optional)</span>
+            <span class="skill">Figma</span>
+          </div>
+        </div>
+
+        <div class="about-img reveal">
+          <img src="photo_2025-10-25_15-26-22.jpg" alt="About">
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="reveal">Portfolio</h2>
+          <div class="filters">
+            <button class="filter-btn active" data-cat="all">Barchasi</button>
+            <button class="filter-btn" data-cat="frontend">Frontend</button>
+            <button class="filter-btn" data-cat="ui">UI Design</button>
+            <button class="filter-btn" data-cat="motion">Animation</button>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="card reveal" data-category="frontend">
+            <div class="thumb"><img src="" alt="Project 1"></div>
+            <div class="info"><h3>Responsive E‑commerce</h3><p>Toʻliq responsive onlayn doʻkon — HTML/CSS/JS</p></div>
+          </article>
+
+          <article class="card reveal" data-category="ui">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=60" alt="Project 2"></div>
+            <div class="info"><h3>Mobile App UI</h3><p>Figma’dan eksport qilingan interfeys va prototip</p></div>
+          </article>
+
+          <article class="card reveal" data-category="motion">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1503342217505-b0a15d1f25f6?auto=format&fit=crop&w=800&q=60" alt="Project 3"></div>
+            <div class="info"><h3>Micro‑animations</h3><p>CSS & JS yordamida animatsion komponentlar</p></div>
+          </article>
+
+          <article class="card reveal" data-category="frontend">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=60" alt="Project 4"></div>
+            <div class="info"><h3>Portfolio Website</h3><p>Shaxsiy portfolio — one‑page responsive dizayn</p></div>
+          </article>
+
+          <article class="card reveal" data-category="ui">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=800&q=60" alt="Project 5"></div>
+            <div class="info"><h3>Dashboard UI</h3><p>Admin panel dizayni — charts & cards</p></div>
+          </article>
+
+          <article class="card reveal" data-category="motion">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&q=60" alt="Project 6"></div>
+            <div class="info"><h3>Interactive Hero</h3><p>Canvas + JS yordamida background animatsiya</p></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="reveal">Contact</h2>
+          <div style="color:var(--muted)">Sayt orqali yoki ijtimoiy tarmoqlarda bog'laning</div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <h3>Get in touch</h3>
+            <p style="color:var(--muted)">Email: <a href="mad1sh181@gmail.com">mad1sh181@gmail.com</a></p>
+            <div class="socials">
+              <a href="#">GH</a>
+              <a href="#">LI</a>
+              <a href="#">TG</a>
+            </div>
+          </div>
+
+          <form class="contact-card reveal" onsubmit="event.preventDefault();alert('Form submitted (demo)')">
+            <label style="display:block;margin-bottom:8px;color:var(--gray)">Name</label>
+            <input type="text" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);margin-bottom:12px">
+            <label style="display:block;margin-bottom:8px;color:var(--gray)">Message</label>
+            <textarea required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);min-height:110px"></textarea>
+            <div style="margin-top:12px;text-align:right"><button class="btn primary" type="submit">Send</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2025 Your Name · All rights reserved</div>
+  </footer>
+
+  <script>
+    // Simple reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('show'); }
+      });
+    },{threshold:0.12});
+    reveals.forEach(r=>obs.observe(r));
+
+    // Mobile menu (simple)
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const nav = document.querySelector('nav ul');
+      if(nav.style.display === 'flex'){ nav.style.display = 'none'; }
+      else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position='absolute'; nav.style.right='18px'; nav.style.top='64px'; nav.style.background='linear-gradient(180deg, rgba(0,0,0,0.6), rgba(44,0,62,0.2))'; nav.style.padding='12px'; nav.style.borderRadius='10px' }
+    });
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.portfolio-grid .card');
+
+    function filter(cat){
+      cards.forEach(c=>{
+        const itemCat = c.getAttribute('data-category');
+        if(cat === 'all' || itemCat === cat){ c.classList.remove('hide'); }
+        else { c.classList.add('hide'); }
+      });
+    }
+
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-cat');
+        filter(cat);
+      })
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+  </script>
+</body>
+</html>
