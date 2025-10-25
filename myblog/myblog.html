@@ -87,6 +87,47 @@
       max-width: 600px;
     }
 
+    /* --- IJODIY ISHLARIM BO'LIMI --- */
+    #art {
+      text-align: center;
+    }
+
+    #art h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #f8f8f8;
+      letter-spacing: 1px;
+    }
+
+    #art p {
+      color: #bdbdbd;
+      font-size: 17px;
+      margin-bottom: 40px;
+      font-style: italic;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      opacity: 0.9;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.3);
+      opacity: 1;
+    }
+
     #contact {
       text-align: center;
     }
@@ -137,23 +178,33 @@
     <h1>Mening Portfoliom</h1>
     <nav>
       <a href="#home">Men haqimda</a>
+      <a href="#art">Ijodiy ishlarim</a>
       <a href="#contact">Aloqa</a>
     </nav>
   </header>
 
   <section id="home">
-    <img src="photo_2025-05-02_23-20-55.jpg" alt="Mening rasimim">
+    <img src="rasmingiz.jpg" alt="Mening rasimim">
     <h2>Salom! Men Madinabonu 👋</h2>
-    <p>Bu portfoliom orqali o‘zim haqimda qisqacha tanishtiraman. 🎭</p>
-    <p>hush kelibsiz! 🖐🏻</p>
+    <p>Men ijodkor, intiluvchan va san’atni sevuvchi insonman. Bu portfoliom orqali o‘zim haqimda qisqacha tanishtiraman. 🎭</p>
+  </section>
+
+  <section id="art">
+    <h2>🎨 Ijodiy ishlarim</h2>
+    <p>Har bir chizig‘im — qalbimdagi bir bo‘lak tuyg‘u. Quyida men chizgan ayrim ishlarimni ko‘rishingiz mumkin 💫</p>
+    <div class="gallery">
+      <img src="rasm1.jpg" alt="Ijodiy ish 1">
+      <img src="rasm2.jpg" alt="Ijodiy ish 2">
+      <img src="rasm3.jpg" alt="Ijodiy ish 3">
+    </div>
   </section>
 
   <section id="contact">
     <h2>Aloqa uchun</h2>
     <div class="contact-links">
-      <a href="mailto:navrozkurbanov4@gmail.com">✉️ Email</a>
-      <a href="https://t.me/navrozovna_01" target="_blank">📱 Telegram</a>
-      <a href="https://www.instagram.com/rauf_faik_fanat_0109?igsh=MTF0ams1ZXc0ZHhvZA==" target="_blank">📸 Instagram</a>
+      <a href="mailto:madinabonu@example.com">✉️ Email</a>
+      <a href="https://t.me/username" target="_blank">📱 Telegram</a>
+      <a href="https://instagram.com/username" target="_blank">📸 Instagram</a>
     </div>
   </section>
 
