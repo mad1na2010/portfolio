@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mening Portfoliom</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #111;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 24px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    section {
+      padding: 120px 80px;
+      min-height: 100vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    #home img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    #home h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    #home p {
+      font-size: 18px;
+      color: #aaa;
+      max-width: 600px;
+    }
+
+    #contact {
+      text-align: center;
+    }
+
+    #contact h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 30px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mening Portfoliom</h1>
+    <nav>
+      <a href="#home">Men haqimda</a>
+      <a href="#contact">Aloqa</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <img src="photo_2025-05-02_23-20-55.jpg" alt="Mening rasimim">
+    <h2>Salom! Men Madinabonu 👋</h2>
+    <p>Bu portfoliom orqali o‘zim haqimda qisqacha tanishtiraman. 🎭</p>
+  </section>
+
+  <section id="contact">
+    <h2>Aloqa uchun</h2>
+    <div class="contact-links">
+      <a href="mailto:navrozkurbanov4@gmail.com">✉️ Email</a>
+      <a href="https://t.me/navrozovna_01" target="_blank">📱 Telegram</a>
+      <a href="https://www.instagram.com/rauf_faik_fanat_0109?igsh=MTF0ams1ZXc0ZHhvZA==" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Madinabonu. Barcha huquqlar himoyalangan.
+  </footer>
+
+</body>
+</html>
