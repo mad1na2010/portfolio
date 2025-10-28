@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aloqa | Madina Portfolio</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Playfair Display", serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2d2a26, #3b3a35, #4a463f);
+      color: #f3f1ec;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(50, 48, 44, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f5f3ef;
+    }
+
+    .logo span {
+      color: #c2a661;
+    }
+
+    .navbar a {
+      color: #e8e6e0;
+      margin-left: 25px;
+      font-size: 17px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #c2a661;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      padding: 130px 10% 100px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    .contact h2 span {
+      color: #c2a661;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
+    }
+
+    .contact-info h3 {
+      color: #c2a661;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #e2dfda;
+    }
+
+    .contact-info i {
+      color: #c2a661;
+      margin-right: 10px;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 25px rgba(194, 166, 97, 0.1);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 16px;
+      font-family: "Poppins", sans-serif;
+      transition: 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .contact-form button {
+      margin-top: 10px;
+      background: #c2a661;
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: "Poppins", sans-serif;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(40, 39, 36, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c5c2b8;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">Madina<span>.</span></a>
+    <nav class="navbar">
+      <a href="index.html">Bosh sahifa</a>
+      <a href="menhaqimda.html">Men haqimda</a>
+      <a href="skills.html">Qobiliyatlar</a>
+      <a href="projects.html">Loyihalar</a>
+      <a href="contact.html" class="active">Aloqa</a>
+    </nav>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2><span>Aloqa</span> uchun</h2>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Men bilan bog‘lanish</h3>
+        <p><i class='bx bx-map'></i> Xorazm viloyati, O‘zbekiston</p>
+        <p><i class='bx bx-phone'></i> +998 93 460 31 13</p>
+        <p><i class='bx bx-envelope'></i> komilovam@gmail.com</p>
+        <p><i class='bx bx-time'></i> Dushanba - Yakshanba: 09:00 - 20:00</p>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Ismingiz" required>
+        <input type="email" placeholder="Email manzilingiz" required>
+        <textarea rows="6" placeholder="Xabaringizni yozing..." required></textarea>
+        <button type="submit">Xabar yuborish</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Madina Portfolio. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+</body>
+</html>

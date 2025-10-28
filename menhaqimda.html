@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men haqimda | Madina Portfolio</title>
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Playfair Display", serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2d2a26, #3b3a35, #4a463f);
+      color: #f3f1ec;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(50, 48, 44, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f5f3ef;
+    }
+
+    .logo span {
+      color: #c2a661;
+    }
+
+    .navbar a {
+      color: #e8e6e0;
+      margin-left: 25px;
+      font-size: 17px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #c2a661;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      padding: 130px 10% 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .about-img img {
+      width: 350px;
+      border-radius: 20px;
+      border: 4px solid #3b3a35;
+      box-shadow: 0 0 25px rgba(194, 166, 97, 0.2);
+      background: rgba(255,255,255,0.05);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .about-content {
+      max-width: 600px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .about-content h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #f3f1ec;
+    }
+
+    .about-content h2 span {
+      color: #c2a661;
+    }
+
+    .about-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #d9d6ce;
+      margin-bottom: 25px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 25px;
+    }
+
+    .info-box p {
+      margin-bottom: 8px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .info-box strong {
+      color: #c2a661;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #c2a661;
+      color: #1f1f1f;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d1b56b;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(40, 39, 36, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c5c2b8;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img img {
+        width: 250px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">Madina<span>.</span></a>
+    <nav class="navbar">
+      <a href="portfoliom.html">Bosh sahifa</a>
+      <a href="menhaqimda.html" class="active">Men haqimda</a>
+      <a href="qobiliyatlar.html">Qobiliyatlar</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="https://i.pinimg.com/736x/ad/99/39/ad9939a20ea146add50abbddb53fb9ff.jpg" alt="Madina">
+    </div>
+
+    <div class="about-content">
+      <h2>Men <span>haqimda</span></h2>
+
+      <div class="info-box">
+        <p><strong>Ism:</strong> Madina Komilova</p>
+        <p><strong>Tug‘ilgan yili:</strong> 2010 yil</p>
+        <p><strong>Yosh:</strong> 15 yosh</p>
+        <p><strong>Mutaxassislik :</strong> Frontend developer</p>
+        <p><strong>Holat:</strong> Maktab o‘quvchisi</p>
+        <p><strong>Bog'lanish uchun tel :</strong> +998 93 460 31 13</p>
+      </div>
+
+      <p>Men o‘qishni, o‘rganishni va o‘zimni har kuni rivojlantirishni yaxshi ko‘raman. Hozirda matematika, ingliz tili va IT kurslariga qatnashaman. 
+      Dasturlashni o‘rganish orqali zamonaviy texnologiyalarni o‘zlashtirish va kelajakda muvaffaqiyatli dasturchi bo‘lishni maqsad qilganman.</p>
+
+      <p>Bundan tashqari, dizayn va estetikaga qiziqaman — bu menga nafis va chiroyli web-saytlar yaratishda ilhom beradi. 
+      Men uchun eng muhimi — har bir ishda go‘zallik, soddalik va tartib.</p>
+
+      <a href="contact.html" class="btn">Aloqaga chiqish</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Madina Portfolio. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+</body>
+</html>

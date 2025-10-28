@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qobiliyatlar | Madina Portfolio</title>
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Playfair Display", serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #2d2a26, #3b3a35, #4a463f);
+      color: #f3f1ec;
+    }
+
+    /* HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(50, 48, 44, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f5f3ef;
+    }
+
+    .logo span {
+      color: #c2a661;
+    }
+
+    .navbar a {
+      color: #e8e6e0;
+      margin-left: 25px;
+      font-size: 17px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #c2a661;
+    }
+
+    /* SKILLS SECTION */
+    .skills {
+      padding: 130px 10% 100px;
+    }
+
+    .skills h2 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .skills h2 span {
+      color: #c2a661;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .skill-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(194, 166, 97, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .skill-title i {
+      font-size: 30px;
+      color: #c2a661;
+      margin-right: 15px;
+    }
+
+    .skill-title h3 {
+      font-size: 22px;
+      font-family: "Poppins", sans-serif;
+      color: #f3f1ec;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      background: #c2a661;
+      border-radius: 5px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    .skill-box:hover .progress {
+      width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(40, 39, 36, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c5c2b8;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .skill-box {
+      animation: slideIn 1.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">Madina<span>.</span></a>
+    <nav class="navbar">
+      <a href="portfoliom.html">Bosh sahifa</a>
+      <a href="menhaqimda.html">Men haqimda</a>
+      <a href="qobiliyatlar.html" class="active">Qobiliyatlar</a>
+    </nav>
+  </header>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <h2>Men <span>qobiliyatlarim</span></h2>
+
+    <div class="skills-container">
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bx-math'></i>
+          <h3>Matematika</h3>
+        </div>
+        <p>Mantiqiy fikrlash, formulalarni tushunish va masalalarni yechishda ijodiy yondashuv.</p>
+        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bx-book-reader'></i>
+          <h3>Ingliz tili</h3>
+        </div>
+        <p>So‘z boyligi va grammatikani rivojlantirish orqali CEFR darajamni oshirmoqdaman.</p>
+        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bx-code'></i>
+          <h3>IT va Dasturlash</h3>
+        </div>
+        <p>HTML, CSS, va JavaScript orqali web-saytlar yaratish, dizaynni optimallashtirish.</p>
+        <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bxl-html5'></i>
+          <h3>HTML</h3>
+        </div>
+        <p>Web sahifalarni tuzish, semantik struktura va elementlardan to‘g‘ri foydalanish.</p>
+        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bxl-css3'></i>
+          <h3>CSS</h3>
+        </div>
+        <p>Old money va boshqa uslubidagi nafis, chiroyli va responsive dizaynlar yaratish.</p>
+        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+      </div>
+
+      <div class="skill-box">
+        <div class="skill-title">
+          <i class='bx bxl-javascript'></i>
+          <h3>JavaScript</h3>
+        </div>
+        <p>Interaktiv tugmalar, animatsiyalar va foydalanuvchi bilan aloqador funksiyalar.</p>
+        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Madina Portfolio. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+</body>
+</html>
