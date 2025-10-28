@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madina Portfolio</title>
+
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    /* === RESET === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Playfair Display", serif;
+      scroll-behavior: smooth;
+    }
+
+    /* === BODY === */
+    body {
+      background: linear-gradient(135deg, #2d2a26, #3b3a35, #4a463f);
+      color: #f3f1ec;
+      overflow-x: hidden;
+    }
+
+    /* === HEADER === */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(50, 48, 44, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #f5f3ef;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #c2a661; /* oltin-bej */
+    }
+
+    .navbar a {
+      color: #e8e6e0;
+      margin-left: 25px;
+      font-size: 17px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #c2a661;
+    }
+
+    #menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #e8e6e0;
+    }
+
+    /* === HOME SECTION === */
+    .home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 10%;
+    }
+
+    .home-content {
+      max-width: 550px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .home-content h3 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #d3c7a1;
+    }
+
+    .home-content h1 {
+      font-size: 56px;
+      margin: 10px 0;
+      color: #f3f1ec;
+      font-weight: 700;
+    }
+
+    .home-content span {
+      color: #c2a661;
+      font-style: italic;
+    }
+
+    .home-content p {
+      margin-top: 15px;
+      line-height: 1.7;
+      font-size: 17px;
+      color: #d9d6ce;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #c2a661;
+      color: #1f1f1f;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #d1b56b;
+      transform: scale(1.05);
+    }
+
+    .home-img img {
+      width: 400px;
+      border-radius: 50%;
+      border: 5px solid #3b3a35;
+      box-shadow: 0 0 25px rgba(194, 166, 97, 0.2);
+      animation: float 4s ease-in-out infinite;
+      background: rgba(255,255,255,0.05);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(40, 39, 36, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #c5c2b8;
+      font-size: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 900px) {
+      .home {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .home-img {
+        margin-top: 40px;
+      }
+
+      .home-img img {
+        width: 260px;
+      }
+
+      #menu-icon {
+        display: block;
+      }
+
+      .navbar {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: rgba(48, 46, 42, 0.95);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .navbar.active {
+        display: block;
+      }
+
+      .navbar a {
+        display: block;
+        margin: 15px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">Madina<span>.</span></a>
+    <nav class="navbar">
+      <a href="#" class="active">Bosh sahifa</a>
+      <a href="menhaqimda.html">Men haqimda</a>
+      <a href="qobiliyatlar.html">Qobiliyatlar</a>
+    </nav>
+    <div class="bx bx-menu" id="menu-icon"></div>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Salom, men</h3>
+      <h1>Madina Komilova</h1>
+      <h3><span>Frontend Developer</span></h3>
+      <p>Men nafis, zamonaviy va professionallikni o‘zida mujassam etgan web-saytlar yaratishga ixtisoslashgan Frontend Developer’man. Klassika va minimalizm — mening uslubim.</p>
+      <a href="#" class="btn">Loyihalarimni ko‘rish</a>
+    </div>
+
+    <div class="home-img">
+      <img src="https://i.pinimg.com/736x/ad/99/39/ad9939a20ea146add50abbddb53fb9ff.jpg" alt="profile">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Madina Portfolio. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Mobil menyu
+    let menuIcon = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+
+    menuIcon.onclick = () => {
+      navbar.classList.toggle('active');
+      menuIcon.classList.toggle('bx-x');
+    };
+  </script>
+
+</body>
+</html>
